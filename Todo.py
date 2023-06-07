@@ -17,7 +17,6 @@ class User(db.Model):
     email = db.Column(db.String, unique=True, nullable=False)
     passwordhash = db.Column(db.String(128))
     
-    
     def __repr__(self):
         return self.email
     
@@ -26,3 +25,6 @@ class User(db.Model):
         
     def check_password(self,password_raw):
         return check_password_hash(self.passwordhash,password_raw)
+    
+    def test(self):
+        pass
